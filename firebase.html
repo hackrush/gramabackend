@@ -1,0 +1,47 @@
+<!Doctype <html>
+<head>
+	<title></title>
+
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.0.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.0.5/firebase-database.js"></script>
+  <script>
+    var config = {
+      // ...
+    };
+    firebase.initializeApp(config);
+  </script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBYCu1Xqo74myQ-o1_AvLg2eRzNZ0f2Vco",
+    authDomain: "grama-932e8.firebaseapp.com",
+    databaseURL: "https://grama-932e8.firebaseio.com",
+    storageBucket: "grama-932e8.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+    
+</head>
+<body>
+<!-- twitter oAuth -->
+var ref = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com");
+ref.authWithOAuthPopup("twitter", function(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+  }
+});
+<!-- twitter oAuth end -->
+<!-- facebook oAuth -->
+var ref = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com");
+ref.authWithOAuthPopup("facebook", function(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+  }
+});
+<!-- end facebook oAuth -->
+</body>
+</html>
